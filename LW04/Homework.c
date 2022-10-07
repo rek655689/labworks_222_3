@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_DEPRECATE
+п»ї#define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <locale.h>
 #define humans_count 4
@@ -19,10 +19,10 @@ void main(void)
 	int bill;
 	float tips;
 
-	puts("Введите размер счета на каждого человека:");
+	puts("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ СЃС‡РµС‚Р° РЅР° РєР°Р¶РґРѕРіРѕ С‡РµР»РѕРІРµРєР°:");
 	scanf("%d", &bill);
 
 	tips = calculate_tips(bill);
 
-	printf("Чаевые составляют %d руб. %d коп.", (int)tips, (int)((tips - (int)tips) * 100));
+	printf("Р§Р°РµРІС‹Рµ СЃРѕСЃС‚Р°РІР»СЏСЋС‚ %d СЂСѓР±. %d РєРѕРї.", (int)tips, (int)((tips - (int)tips) * 100));
 }

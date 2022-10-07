@@ -1,0 +1,4 @@
+﻿  Exercises.c
+C:\Users\Rek\source\repos\LW03\Exercises.c(20,15): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Rek\source\repos\LW03\Exercises.c(25,15): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  LW03.vcxproj -> C:\Users\Rek\source\repos\LW03\x64\Debug\LW03.exe

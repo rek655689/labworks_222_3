@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
@@ -11,13 +11,13 @@ double calculate(double x, double y, double z)
 }
 
 
-void main(void)
+void main1(void)
 {
 	setlocale(LC_ALL, "RUS");
 
 	double x, y, z, result;
 	// x = 3.74e-2, y = -0.825, z = 0.16e2;
-	puts("Введите значения x, y, z");
+	puts("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ x, y, z");
 	scanf("%lf%lf%lf", &x, &y, &z);
 	result = calculate(x, y, z);
 	printf("v = %.4lf", result);

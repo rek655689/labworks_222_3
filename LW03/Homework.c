@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <locale.h>
 #define g 9.8f
@@ -15,8 +15,8 @@ void main(void)
 	setlocale(LC_ALL, "RUS");
 
 	float m, h, result;
-	puts("Введите значения массы тела и высоты падения");
+	puts("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ РјР°СЃСЃС‹ С‚РµР»Р° Рё РІС‹СЃРѕС‚С‹ РїР°РґРµРЅРёСЏ");
 	scanf("%f%f", &m, &h);
 	result = calculate(m, h);
-	printf("Сила тяжести составляет %g Ньютон", result);
+	printf("РЎРёР»Р° С‚СЏР¶РµСЃС‚Рё СЃРѕСЃС‚Р°РІР»СЏРµС‚ %g РќСЊСЋС‚РѕРЅ", result);
 }

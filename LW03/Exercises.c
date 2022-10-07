@@ -4,7 +4,7 @@
 #define D_a 2.54
 #define D_i 2.32166
 
-void main()
+void main1()
 {
 	setlocale(LC_ALL, "RUS");
 
