@@ -1,4 +1,5 @@
 # labworks_222_3
+"not verified" означает, что лабу ещё не проверили
 ## Как потрогать?
 1. Переходим в папку с нужной лабой, копируем ссылку (*пример*: https://github.com/rek655869/labworks_222_3/tree/master/LW03)
 2. Идем [сюда](https://downgit.github.io/#/home), вставляем ссылку, жмем "Download"
