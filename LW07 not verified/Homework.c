@@ -51,7 +51,7 @@ void month(int n)
 	}
 }
 
-void main(void)
+void main1(void)
 {
 	setlocale(LC_ALL, "RUS");
 	

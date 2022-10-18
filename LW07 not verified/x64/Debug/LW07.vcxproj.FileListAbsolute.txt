@@ -1,1 +1,2 @@
 C:\Users\Rek\source\repos\LW07\x64\Debug\LW07.exe
+C:\Users\Rek\source\repos\LW07 not verified\x64\Debug\LW07.exe

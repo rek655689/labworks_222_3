@@ -1,2 +1,3 @@
-﻿  Homework.c
-  LW07.vcxproj -> C:\Users\Rek\source\repos\LW07\x64\Debug\LW07.exe
+﻿  Exercises.c
+C:\Users\Rek\source\repos\LW07 not verified\Exercises.c(54,7): warning C4101: a: неиспользованная локальная переменная
+  LW07.vcxproj -> C:\Users\Rek\source\repos\LW07 not verified\x64\Debug\LW07.exe
