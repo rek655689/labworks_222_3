@@ -51,7 +51,7 @@ void main1(void)
 
 	// задание 2
 	float x, y;
-	char a, ch;
+	char ch;
 	puts("Введите команду для вычисление в формате: 2*2");
 	scanf("%f%c%f", &x, &ch, &y);
 	switch (ch)

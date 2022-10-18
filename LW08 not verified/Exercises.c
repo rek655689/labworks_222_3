@@ -19,27 +19,30 @@ void main1(void) {
 
 	// задание 3
 	s = 0;
-	for (int i = n; i >= m; i--) {
+	for (int i = n; i >= m;) {
+		i--;
 		s += i;
 	}
 	printf("результат №3 - %d\n", s);
 
-	// задание 4: цикл "пока" через do-while
+	// задание 4: через while
 	s = 0;
 	int i = n;
 	while (i >= m) {
 		i--;
 		s += i;
 	}
-	printf("результат №4 - %d\n", s); // аналогично №2
+	printf("результат №4 - %d\n", s);
 
-	// задание 5: цикл "до" через do-while
+	// задание 5: через do-while
 	s = 0;
-	i = m;
-	while (i <= n) {
+	i = n;
+	do
+	{
+		i--;
 		s += i;
-		i++;
 	}
+	while (i >= m);
 	printf("результат №5 - %d\n", s);
 
 }
