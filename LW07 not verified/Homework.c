@@ -5,8 +5,14 @@
 
 //—оставить программу, котора€ в зависимости от пор€дкового номера мес€ца выводит на экран врем€ года.
 
-void month(int n)
+void main(void)
 {
+	setlocale(LC_ALL, "RUS");
+	
+	int n;
+	puts("¬ведите пор€дковый номер мес€ца");
+	scanf("%d", &n);
+	
 	switch (n)
 	{
 	case 1:  // €нварь
@@ -47,17 +53,6 @@ void month(int n)
 		break;
 	default:
 		puts("¬ведите корректный номер мес€ца (от 1 до 12)");
-		break;
 	}
-}
-
-void main1(void)
-{
-	setlocale(LC_ALL, "RUS");
-	
-	int n;
-	puts("¬ведите пор€дковый номер мес€ца");
-	scanf("%d", &n);
-	month(n);
 	
 }
