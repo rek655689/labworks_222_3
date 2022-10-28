@@ -1,1 +1,2 @@
 C:\Users\Rek\source\repos\LW06\x64\Debug\LW06.exe
+C:\Users\Rek\source\repos\LW06 not verified\x64\Debug\LW06.exe
