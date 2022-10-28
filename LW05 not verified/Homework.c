@@ -7,7 +7,8 @@ double calculate(double x, double y, double z)
 {
 	double down_fraction = (2 * y) / (1 + pow(x, 2) * pow(y, 2));
 	double fraction = (1 + pow(sin(x + y), 2)) / (fabs(x - down_fraction));
-	return fraction * pow(x, fabs(y)) + pow(cos(atan2(1, z)), 2);
+	double result = fraction * pow(x, fabs(y)) + pow(cos(atan2(1, z)), 2);
+	return result;
 }
 
 
