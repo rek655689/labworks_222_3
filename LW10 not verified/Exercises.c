@@ -1,9 +1,9 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
 
-double fa(double x) {  // к заданию 1
+double fa(double x) {  // Рє Р·Р°РґР°РЅРёСЋ 1
 	double y;
 	if (x <= 3) y = pow(x, 2) - 3 * x + 9;
 	else y = 1 / (pow(x, 3) + 3);
@@ -11,13 +11,13 @@ double fa(double x) {  // к заданию 1
 
 }
 
-double fb(double x) {  // к заданию 1
+double fb(double x) {  // Рє Р·Р°РґР°РЅРёСЋ 1
 	double y;
 	y = x * exp(sin(pow(x, 2)));
 	return y;
 }
 
-double factorial(double a) {   // к заданию 2
+double factorial(double a) {   // Рє Р·Р°РґР°РЅРёСЋ 2
 	double result = 1;
 	for (int i = 1; i <= a; i++) {
 		result *= i;
@@ -25,7 +25,7 @@ double factorial(double a) {   // к заданию 2
 	return result;
 }
 
-double sin_n(double x, int N) {  // к заданию 2
+double sin_n(double x, int N) {  // Рє Р·Р°РґР°РЅРёСЋ 2
 	double y = 0;
 	for (int k = 1; k <= N; k++) {
 		y += pow(-1, k - 1) * ((pow(x, 2 * k - 1)) / factorial(2 * k - 1));
@@ -33,7 +33,7 @@ double sin_n(double x, int N) {  // к заданию 2
 	return y;
 }
 
-double sin_eps(double x, double eps) {  // к заданию 2
+double sin_eps(double x, double eps) {  // Рє Р·Р°РґР°РЅРёСЋ 2
 	double y = 0;
 	double element;
 	int k = 0;
@@ -49,24 +49,24 @@ double sin_eps(double x, double eps) {  // к заданию 2
 void main1() {
 	setlocale(LC_ALL, "RUS");
 
-	// ЗАДАНИЕ 1.  Программа вычисления произведения, разности квадратов и удвоенной суммы значений двух функций
+	// Р—РђР”РђРќРР• 1.  РџСЂРѕРіСЂР°РјРјР° РІС‹С‡РёСЃР»РµРЅРёСЏ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ, СЂР°Р·РЅРѕСЃС‚Рё РєРІР°РґСЂР°С‚РѕРІ Рё СѓРґРІРѕРµРЅРЅРѕР№ СЃСѓРјРјС‹ Р·РЅР°С‡РµРЅРёР№ РґРІСѓС… С„СѓРЅРєС†РёР№
 	double x;
-	puts("Введите значение x");
+	puts("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ x");
 	scanf("%lf", &x);
 	printf("fa(x)=%lf , fb(x)=%lf\n", fa(x), fb(x));
 	printf("fa * fb = %lf, fa^2 - fb^2 = %lf, 2fa + 2fb = %lf", fa(x) * fb(x), pow(fa(x), 2) - pow(fb(x), 2), 2 * (fa(x) + fb(x)));
 	puts("\n");
 
 
-	// ЗАДАНИЕ 2.  Программа вычисления sin(x) тремя различными способами
+	// Р—РђР”РђРќРР• 2.  РџСЂРѕРіСЂР°РјРјР° РІС‹С‡РёСЃР»РµРЅРёСЏ sin(x) С‚СЂРµРјСЏ СЂР°Р·Р»РёС‡РЅС‹РјРё СЃРїРѕСЃРѕР±Р°РјРё
 	// x = 5, N = 25, eps = 0,000001
-	puts("Введите значение x");
+	puts("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ x");
 	scanf("%lf", &x);
 	int n;
-	puts("Введите значение N - число суммируемых k-х членов ряда"); 
+	puts("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ N - С‡РёСЃР»Рѕ СЃСѓРјРјРёСЂСѓРµРјС‹С… k-С… С‡Р»РµРЅРѕРІ СЂСЏРґР°"); 
 	scanf("%d", &n);
 	double eps;
-	puts("Введите точность вычисления");
+	puts("Р’РІРµРґРёС‚Рµ С‚РѕС‡РЅРѕСЃС‚СЊ РІС‹С‡РёСЃР»РµРЅРёСЏ");
 	scanf("%lf", &eps);
 
 	double res_1 = sin(x);

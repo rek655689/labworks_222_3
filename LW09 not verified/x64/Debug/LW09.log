@@ -1,4 +1,1 @@
-﻿  Homework.c
-C:\Users\Rek\source\repos\LW09\Homework.c(20,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\Rek\source\repos\LW09\Homework.c(21,14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-  LW09.vcxproj -> C:\Users\Rek\source\repos\LW09\x64\Debug\LW09.exe
+﻿LINK : fatal error LNK1168: не удается открыть C:\Users\Rek\source\repos\LW09 not verified\x64\Debug\LW09.exe для записи

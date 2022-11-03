@@ -1,24 +1,24 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
 
 
-// прямоугольный треугольник
-void main()
+// РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+void main1()
 {
 	setlocale(LC_ALL, "RUS");
 
 	char s;
 	int a, b;
-	puts("Введите символ");
+	puts("Р’РІРµРґРёС‚Рµ СЃРёРјРІРѕР»");
 	scanf("%c", &s);
-	puts("Введите значения катетов");
+	puts("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ РєР°С‚РµС‚РѕРІ");
 	scanf("%d%d", &a, &b);
 	puts("\n");
 
-	int incr = ceil((double)b / a); // приращение выводимых символов
-	int skips = ceil((double)a / b);  // по сколько строк не увеличивать кол-во символов
+	int incr = ceil((double)b / a); // РїСЂРёСЂР°С‰РµРЅРёРµ РІС‹РІРѕРґРёРјС‹С… СЃРёРјРІРѕР»РѕРІ
+	int skips = ceil((double)a / b);  // РїРѕ СЃРєРѕР»СЊРєРѕ СЃС‚СЂРѕРє РЅРµ СѓРІРµР»РёС‡РёРІР°С‚СЊ РєРѕР»-РІРѕ СЃРёРјРІРѕР»РѕРІ
 	int count_columns = 1;
 	for (int row = 1; row <= a; row++)
 	{
