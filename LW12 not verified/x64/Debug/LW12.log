@@ -1,0 +1,7 @@
+﻿  Homework.c
+C:\Users\Rek\source\repos\LW12\Homework.c(28,1): warning C4133: инициализация: несовместимые типы - из "double *" в "unsigned char *"
+C:\Users\Rek\source\repos\LW12\Homework.c(37,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\Rek\source\repos\LW12\Homework.c(38,1): warning C4133: инициализация: несовместимые типы - из "int *" в "unsigned char *"
+C:\Users\Rek\source\repos\LW12\Homework.c(47,1): warning C4133: инициализация: несовместимые типы - из "float *" в "unsigned char *"
+C:\Users\Rek\source\repos\LW12\Homework.c(56,1): warning C4133: инициализация: несовместимые типы - из "double *" в "unsigned char *"
+  LW12.vcxproj -> C:\Users\Rek\source\repos\LW12\x64\Debug\LW12.exe
