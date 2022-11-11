@@ -24,7 +24,7 @@ void draw_rectangle(int a, int b) {
 float area_triangle(float a, float b, float c) {
 	float result, p;
 	p = (a + b + c) / 2;
-	result = sqrt(p * (p - a) * (p - b) * (p - c));
+	result = (float)sqrt(p * (p - a) * (p - b) * (p - c));
 	return result;
 }
 
@@ -35,44 +35,49 @@ void draw_triangle(int a) {
 		printf("\n");
 		k++;
 	}
+
+}void draw_r_triangle(int a, int b) {
+	int incr = (int)ceil((double)b / a); // приращение выводимых символов
+	int skips = (int)ceil((double)a / b);  // по сколько строк не увеличивать кол-во символов
+	int count_columns = 1;
+	for (int row = 1; row <= a; row++)
+	{
+		for (int col = 1; (col <= count_columns) && (col <= b); col++) printf("%c", '*');
+		if ((row - 1) % skips == 0) count_columns += incr;
+		printf("\n");
+	}
 }
 
 float area_r_triangle(float a, float b) {
 	float result;
-	result = 0.5 * a * b;
+	result = 0.5f * a * b;
 	return result;
 }
 
-void name(int a) {
-	if (a == 3) puts("Треугольник");
-	else puts("Прямоугольник");
-}
 
 void main() {
 	setlocale(LC_ALL, "RUS");
-	char c;
+	char c = 'a';  // чтобы не ругался на сравнение с неинициализированной переменной
 
-	while(1) {
+	while (c != 'y') {
 		char figure;
 		printf("Какую фигуру хотите выбрать? Введите соответствующий символ:\n\
 	Прямоугольник - p;\n\
 	Треугольник - t; \n\
 	Прямоугольный треугольник - r.\n");
 		scanf(" %c", &figure);
-		if (figure != 'p' && figure != 't' && figure != 'r') { puts("Введите правильный символ\n"); continue; }
 		printf("\n");
 
-		while(1) {
+		while (c != 'y') {
 			int operation;
 			printf("Какую операцию произвести? Введите соответствующий символ:\n\
 	Рассчитать площадь - 1;\n\
 	Вывести определение фигуры - 2;\n\
 	Нарисовать фигуру - 3.\n");
 			scanf("%d", &operation);
-			if (operation < 1 || operation > 3) { puts("Введите правильный символ\n"); continue; }
 			printf("\n");
 
-		
+
 			switch (figure) {
 			case 'p':
 				switch (operation) {
@@ -81,12 +86,12 @@ void main() {
 					puts("Введите значения сторон a и b:");
 					scanf("%f%f", &a, &b);
 					float result = area_rectangle(a, b);
-					printf("S = %f\n", result); 
+					printf("S = %f\n", result);
 					printf("\n");
 					break;
 				}
 				case 2: {
-					name(4);
+					puts("Прямоугольник");
 					printf("\n");
 					break;
 				}
@@ -98,6 +103,8 @@ void main() {
 					printf("\n");
 					break;
 				}
+				default:
+					puts("Введите правильный символ\n");
 				}
 				break;
 
@@ -114,21 +121,23 @@ void main() {
 					break;
 				}
 				case 2: {
-					name(3);
+					puts("Треугольник");
 					printf("\n");
 					break;
 				}
 				case 3: {
 					int a;
-					puts("Введите значения стороны a (будет нарисован правильный треугольник):");
+					puts("Введите значения стороны a:");
 					scanf("%d", &a);
 					draw_triangle(a);
 					printf("\n");
 					break;
 				}
+				default:
+					puts("Введите правильный символ\n");
 				}
 				break;
-		
+
 
 			case 'r':
 				switch (operation) {
@@ -142,30 +151,33 @@ void main() {
 					break;
 				}
 				case 2: {
-					name(3);
+					puts("Треугольник");
 					printf("\n");
 					break;
 				}
 				case 3: {
-					int a;
-					puts("Введите значения стороны a (будет нарисован правильный треугольник):");
-					scanf("%d", &a);
-					draw_triangle(a);
+					int a, b;
+					puts("Введите значения сторон a и b:");
+					scanf("%d%d", &a, &b);
+					draw_r_triangle(a, b);
 					printf("\n");
 					break;
 				}
+				default:
+					puts("Введите правильный символ\n");
 				}
 				break;
+
+			default:
+				puts("Введите правильный символ\n");
 			}
-			
+
 			puts("Сменить фигуру? (Да - y, нет - любой символ)");
 			scanf(" %c", &c);
-			if (c == 'y') break;
 			printf("\n");
 		}
 		puts("Выйти из программы? (Да - y, нет - любой символ)");
 		scanf(" %c", &c);
-		if (c == 'y') break;
 		printf("\n");
 	}
 }

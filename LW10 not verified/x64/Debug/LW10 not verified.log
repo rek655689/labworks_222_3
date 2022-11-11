@@ -1,5 +1,0 @@
-﻿  Homework.c
-C:\Users\Rek\source\repos\LW10 not verified\Homework.c(27,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Rek\source\repos\LW10 not verified\Homework.c(42,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-LINK : warning LNK4044: нераспознанный параметр "/nowarn:6031"; игнорируется
-  LW10 not verified.vcxproj -> C:\Users\Rek\source\repos\LW10 not verified\x64\Debug\LW10 not verified.exe
