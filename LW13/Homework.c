@@ -1,11 +1,11 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #define N 40
 
-// подсчитывает количество слов, длина которых не превышает 3 символов
+// РїРѕРґСЃС‡РёС‚С‹РІР°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕРІ, РґР»РёРЅР° РєРѕС‚РѕСЂС‹С… РЅРµ РїСЂРµРІС‹С€Р°РµС‚ 3 СЃРёРјРІРѕР»РѕРІ
 
 void main1()
 {
@@ -14,7 +14,7 @@ void main1()
 	char str[N];
 	int count = 0;
 	int temp_count = 0;
-	printf("Введите строку: ");
+	printf("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ: ");
 	fgets(str, N, stdin);
 
 	for (int i = 0; i < N; i++)
