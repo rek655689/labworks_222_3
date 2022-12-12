@@ -1,0 +1,5 @@
+﻿  Exercises.c
+C:\Users\Rek\source\repos\LW13\Exercises.c(27,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Homework.c
+  Создание кода...
+  LW13.vcxproj -> C:\Users\Rek\source\repos\LW13\x64\Debug\LW13.exe
