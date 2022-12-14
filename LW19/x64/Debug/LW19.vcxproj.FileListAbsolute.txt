@@ -1,1 +1,2 @@
 C:\Users\Rek\source\repos\pass\LW19\x64\Debug\LW19.exe
+C:\Users\Rek\source\repos\LW19\x64\Debug\LW19.exe

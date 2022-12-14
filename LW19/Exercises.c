@@ -67,14 +67,7 @@ void tab(char* mode,  float step)
 		printf("Ошибка открытия файла для записи");
 		exit(-1);
 	}
-	fprintf(file, "%80s", "f(x) = 1.8x^2 - sin10x\n");
-
-	fprintf(file, "___________________________\n");
-	fprintf(file, "| %-10s | %-10s |\n", "x", "f(x)");
-	fprintf(file, "|------------|------------|\n");
-	for (float i = 0.2f; i <= 2.2f; i += step) {
-		fprintf(file, "| %10.3f | %10.3f |\n", i, func(i));
-	}
-	fprintf(file, "|------------|------------|\n\n");
+	for (float i = 0.2f; i <= 2.2f; i += step) 
+		fprintf(file, "%f\n", func(i));
 	fclose(file);
 }
