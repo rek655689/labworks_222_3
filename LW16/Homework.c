@@ -4,19 +4,23 @@
 #include <locale.h>
 #include <time.h>
 #include <math.h>
-#define XMIN -1000
-#define XMAX 1000
+#define XMIN -2
+#define XMAX 2
 /*
 Сгенерировать три массива со случайными вещественными числами, количество элементов случайно в
 интервале от 10 до 50. Реализовать функцию, которая возвращает новый массив. Все 4 массива вывести на экран.
 
-3. Новый массив, чтобы чередовались положительные элементы первого массива и 
-отрицательные числа массива третьего массива.
+7. Массив d0, d1, d2, ..., dn, каждый элемент которого составляет произведение
+элементов массива b0, b1, b2 ..., b100 до первого нулевого и сумму элементов,
+расположенных после него и так (произведение, сумма, произведение, сумма
+...) до конца.
+
+ВЗЯТЫ ЦЕЛЫЕ ЧИСЛА, ТАК КАК ВЕРОЯТНОСТЬ ПОЛУЧЕНИЯ НУЛЕВЫХ ЗНАЧЕНИЙ ПРИ ВЕЩЕСТВЕННЫХ ЧИСЛАХ КРАЙНЕ МАЛА
 */
 
-double* add_arr(double* array, int size);
-void print_arr(double* ptr_array, int n, char c);
-double* func(int* size4, double* array1, int size1, double* array3, int size3, double* array4);
+int* full_elements(int* array, int size);
+int put_elements(int* ptr_array, int n);
+int func(int* array1, int size1, int* array4);
 
 void main()
 {
@@ -24,27 +28,32 @@ void main()
 	srand((unsigned)time(NULL) / 2);
 
 	int size1 = 10 + rand() % (50 - 10 + 1);
-	double* array1 = malloc(size1 * sizeof(double));
-	array1 = add_arr(array1, size1);
-	print_arr(array1, size1, 'A');
-	printf("\n");
-
 	int size2 = 10 + rand() % (50 - 10 + 1);
-	double* array2 = malloc(size2 * sizeof(double));
-	array2 = add_arr(array2, size2);
-	print_arr(array2, size2, 'B');
-	printf("\n");
-
 	int size3 = 10 + rand() % (50 - 10 + 1);
-	double* array3 = malloc(size3 * sizeof(double));
-	array3 = add_arr(array3, size3);
-	print_arr(array3, size3, 'C');
+
+	int* array1 = malloc(size1 * sizeof(int));
+	int* array2 = malloc(size2 * sizeof(int));
+	int* array3 = malloc(size3 * sizeof(int));
+
+	array1 = full_elements(array1, size1);
+	array2 = full_elements(array2, size2);
+	array3 = full_elements(array3, size3);
+
+	printf("Массив A:\n");
+	put_elements(array1, size1);
+	printf("\n");
+	printf("Массив B:\n");
+	put_elements(array2, size2);
+	printf("\n");
+	printf("Массив C:\n");
+	put_elements(array3, size3);
 	printf("\n");
 	
-	double* array4 = malloc((size1 + size3) * sizeof(double));
+	int* array4 = malloc(size1 * sizeof(int));
 	int size4;
-	array4 = func(&size4, array1, size1, array3, size3, array4);
-	print_arr(array4, size4, 'D');
+	size4 = func(array1, size1, array4);
+	printf("Массив D:\n");
+	put_elements(array4, size4);
 
 	free(array1);
 	free(array2);
@@ -54,62 +63,70 @@ void main()
 }
 
 // заполнение массива случайными числами
-double* add_arr(double* array, int size)
+int* full_elements(int* array, int size)
 {
 	for (int i = 0; i < size; i++)
-		array[i] = XMIN + 1.f * (XMAX - XMIN) * rand() / RAND_MAX;
+		array[i] = XMIN + rand() % (XMAX - XMIN + 1);
 	return array;
 }
 
 // вывод массива
-void print_arr(double* ptr_array, int n, char c)
+int put_elements(int* ptr_array, int n)
 {
 	for (int i = 0; i < n; i++)
-		printf("%c[%d]: %lf\n", c, i, ptr_array[i]);
+		printf("A[%d]: %d\n", i, ptr_array[i]);
+	return 1;
 }
 
-// ЛАБУ ПРОВЕРИЛИ, ПОСОВЕТОВАЛИ ДОДЕЛАТЬ, ТЕПЕРЬ ФУНКЦИЯ НЕ РАБОТАЕТ И МНЕ ВПАДЛУ ПЕРЕДЕЛЫВАТЬ
-double* func(int* size4, double* array1, int size1, double* array3, int size3, double* array4)
+
+int func(int* array1, int size1, int* array)
 {
-	int k_A = 0, k_C = 1;  // k - индекс в массиве
-	*size4 = 0;
+	int k = -1; // текущий индекс в новом массиве
+	int flag = 0; // флаг, показывающий, что мы заполняем - произведение (0) или сумму (1)
+	int sum = 0, prod = 1;
+
 	for (int i = 0; i < size1; i++)
 	{
-		if (array1[i] > 0)
+		if (array1[i] == 0)
 		{
-			array4[k_A] = array1[i];
-			k_A+=2;
-			*size4 += 1;
-		}
-	}
-	for (int i = 0; i < size3; i++)
-	{
-		if (array3[i] < 0)
-		{
-			array4[k_C] = array3[i];
-			k_C+=2;
-			*size4 += 1;
-		}
-	}
-	*size4 = k_A > k_C ? k_A : k_C;
-	print_arr(array4, *size4, 'D');
-	if (array4 == NULL)
-	{
-		printf("Ошибка перераспределения памяти");
-		exit(-1);
-	}
-	// убираем пустые ячейки, сдвигая ячейки со значениями
-	for (int i = 0; i < (*size4); i++)
-	{
-		if (array4[i] > XMAX || array4[i] < XMIN)
-		{
-			for (int j = i, s = 1; j + s < (*size4); j++, s++)
+			k++;
+			switch (flag)
 			{
-				array4[j] = array4[j + s];
+			case 0:
+				flag = 1;
+				array[k] = prod;
+				prod = 1;
+				break;
+			case 1:
+				flag = 0;
+				array[k] = sum;
+				sum = 0;
+				break;
 			}
-			break;
+		}
+		else
+		{
+			switch (flag)
+			{
+			case 0:
+				prod *= array1[i];
+				break;
+			case 1:
+				sum += array1[i];
+				break;
+			}
 		}
 	}
-	array4 = (double*)realloc(array4, (*size4) * sizeof(double));
-	return array4;
+	k++;
+	switch (flag)
+	{
+	case 0:
+		array[k] = prod;
+		break;
+	case 1:
+		array[k] = sum;
+		break;
+	}
+	array = (int*)realloc(array, (k + 1) * sizeof(int));
+	return k + 1;
 }

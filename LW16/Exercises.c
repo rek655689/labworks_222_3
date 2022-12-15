@@ -5,7 +5,7 @@
 #include <time.h>
 
 int delete_k(double* ptr_arr, int size, int k, int num);
-void put_elements(double* ptr_array, int n);
+void put_elements1(double* ptr_array, int n);
 double* insert(double* ptr_arr, int* size, int k);
 
 void main1()
@@ -54,7 +54,7 @@ void main1()
 	printf("Введите сколько удалить элементов и с какого номера:\n>");
 	scanf("%d%d", &k, &num);
 	size = delete_k(ptr_array_d, size, k, num);
-	put_elements(ptr_array_d, size);
+	put_elements1(ptr_array_d, size);
 
 	// 2.2 Выполните вставку -999 после заданного элемента массива
 	printf("Сколько раз вставить -999?\n>");
@@ -75,7 +75,7 @@ int delete_k(double* ptr_arr, int size, int k, int num) {
 }
 
 // печать элементов массива
-void put_elements(double* ptr_array, int n)
+void put_elements1(double* ptr_array, int n)
 {
 	for (int i = 0; i < n; i++)
 		printf("A[%d]: %lf\n", i, ptr_array[i]);
