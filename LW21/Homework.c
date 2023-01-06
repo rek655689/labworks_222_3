@@ -33,7 +33,7 @@ void main()
 	int action = -1;
 	char a;
 	char fname[LEN], find_str[LEN];
-	Employee* p_arr = NULL, * temp = NULL;
+	Employee* p_arr = NULL;
 	int size = 0, x;
 	FILE* file;
 	void* func;
@@ -44,9 +44,9 @@ void main()
 		"	3. Поиск записи в массиве по одному полю (surname)\n"
 		"	4. Сортировка массива по выбранному полю\n"
 		"	5. Сохранение измененного массива записей в новый файл\n"
-		"	6. Выход из программы\n");
+		"	0. Выход из программы\n");
 
-	while (action != 6)
+	while (action != 0)
 	{
 		printf("\nВыберите действие:\n>");
 		scanf("%d", &action);
@@ -151,7 +151,7 @@ void main()
 			fclose(file);
 			break;
 		}
-		case 6:
+		case 0:
 		{
 			printf("Выход из программы");
 			exit(0);
@@ -181,25 +181,23 @@ void print_one(Employee str)
 		str.position, str.birthday, str.salary);
 }
 // заполнение массива из файла
-Employee* add_f_file(FILE* file, Employee* arr, int* size)
+Employee* add_f_file(FILE* file, Employee* arr, int* size)  // !!!!
 {
-	Employee tmp = {0};
 	int i = 0;
 	char a;
 	while (!feof(file))
 	{
-		*size += 1;
-		arr = realloc(arr, *(size) * sizeof(Employee));
-		fscanf(file, " %s", &tmp.surname);
-		fscanf(file, " %s", &tmp.name);
-		fscanf(file, " %s", &tmp.patronymic);
-		fscanf(file, " %s", &tmp.position);
-		fscanf(file, "%d", &tmp.birthday);
-		fscanf(file, "%f", &tmp.salary);
+		arr = (Employee*)realloc(arr, (i + 1) * sizeof(Employee));
+		fscanf(file, " %s", &arr[i].surname);
+		fscanf(file, " %s", &arr[i].name);
+		fscanf(file, " %s", &arr[i].patronymic);
+		fscanf(file, " %s", &arr[i].position);
+		fscanf(file, "%d", &arr[i].birthday);
+		fscanf(file, "%f", &arr[i].salary);
 		a = fgetc(file);
-		arr[i] = tmp;
 		i++;
 	}
+	*(size) = i;
 	return arr;
 }
 // изменение записи

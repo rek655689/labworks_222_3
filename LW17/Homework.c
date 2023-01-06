@@ -19,6 +19,7 @@ void main()
 	srand((unsigned)time(NULL) / 2);
     int* p_arr;
     clock_t t;
+    
     double time;
 
     // сортировка с кол-вом от 1000 до 9999

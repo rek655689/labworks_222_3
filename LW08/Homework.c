@@ -13,7 +13,7 @@ float calculate(float a, float n) {
 	return result;
 }
 
-void main() {
+void main1() {
 	setlocale(LC_ALL, "RUS");
 
 	float a, n;

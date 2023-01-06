@@ -8,7 +8,7 @@
 
 // Перестановка местами соседних элементов на четных и нечетных позициях
 
-void main()
+void main1()
 {
 	setlocale(LC_ALL, "RUS");
 	srand((unsigned)time(NULL) / 2);

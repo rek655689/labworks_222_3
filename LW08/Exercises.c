@@ -8,10 +8,10 @@ float func(float x) {
 	return result;
 }
 
-void main1() {
+void main() {
 	setlocale(LC_ALL, "RUS");
 
-	// ЗАДАНИЕ 0. Напечатайте 10 символов '*' с использованием цикла for
+	/*// ЗАДАНИЕ 0. Напечатайте 10 символов '*' с использованием цикла for
 	for (int start = 1; start <= 10; start++) putchar('*');
 	puts("\n");
 
@@ -68,7 +68,7 @@ void main1() {
 	printf("Результат = %d", s);
 	puts("\n");
 	
-
+	*/
 	// ЗАДАНИЕ 2. Табулирование функции с произвольным шагом
 	puts("f(x) = 1.8x^2 - sin10x");
 

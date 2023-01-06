@@ -12,7 +12,7 @@ int* rand2(int n, int mmax); // задание 2
 double* rand_double2(int n, double dm); // задание 2
 
 
-void main1()
+void main()
 {
 	setlocale(LC_ALL, "RUS");
 	srand((unsigned)time(NULL) / 2);

@@ -1,6 +1,0 @@
-﻿  Homework.c
-C:\Users\Rek\source\repos\LW07 not verified\Homework.c(13,27): warning C4047: return: "char" отличается по уровням косвенного обращения от "char [9]"
-C:\Users\Rek\source\repos\LW07 not verified\Homework.c(61,9): warning C4477: "printf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "1" имеет тип "int"
-C:\Users\Rek\source\repos\LW07 not verified\Homework.c(61,9): warning C4313: printf: конфликт "%s" в строке формата с аргументом 1 типа "int"
-C:\Users\Rek\source\repos\LW07 not verified\Homework.c(52): warning C4715: month: значение возвращается не при всех путях выполнения
-  LW07.vcxproj -> C:\Users\Rek\source\repos\LW07 not verified\x64\Debug\LW07.exe
